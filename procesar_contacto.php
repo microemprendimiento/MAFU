@@ -27,7 +27,7 @@ $stmt->bind_param("ssss", $nombre, $telefono, $email, $mensaje);
 
 if ($stmt->execute()) {
     // Redirigir de nuevo al formulario con una alerta de éxito
-    header("Location: index.php?success=1");
+    header("Location: index.html?success=1");
     exit(); // Asegura que el script se detenga aquí
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
