@@ -1,0 +1,744 @@
+:root {
+    --primario: #27b09e;
+    --primarioOscuro: #114e9d;
+    --secundario: #8b5e19;
+    --secundarioOscuro: #5f4012;
+    --secundarioClaro: #b88436;
+    --blanco: #FFF;
+    --negro: #000;
+    --verde:#11c020;
+    --verdeclaro:#66da70;
+    --rojo: #ff0000;
+    --amarillo:#fbff00;
+    --celeste:#00ccff;
+    --fuentePrincipal: "Koho", sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; 
+    scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/** Globales **/
+/** Globales **/
+body {
+    background-image: url('../imagen/floor-1256804_1280.jpg');
+    background-size: cover; /* La imagen cubre toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-attachment: fixed; /* Fija la imagen al hacer scroll */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+p {
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+a {
+    text-decoration: none;
+}
+img {
+    width: 100%;
+}
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+h1, h2, h3 {
+    text-align: center;
+    color: var(--blanco);
+    font-family: var(--fuentePrincipal);
+}
+h1 {
+    font-size: 4rem;
+}
+h2 {
+    font-size: 3.2rem;
+}
+h3 {
+    font-size: 2.4rem;
+}
+
+/** Header **/
+.header {
+    display: flex;
+    justify-content: center;
+}
+.header__logo {
+    width: 300px; /* Ajusta el ancho a 150 píxeles */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/** Footer **/
+.footer {
+    background-color: var(--secundario);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+.footer__texto {
+    font-family: var(--fuentePrincipal);
+    text-align: center;
+    font-size: 2.2rem;
+}
+.navegacion {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro con 50% de transparencia */
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
+}
+.principal {
+    flex-direction: column;
+}
+.Conocenos {
+    text-align: center; /* Centra todo el contenido dentro del main */
+}
+
+.slogan {
+    display: inline-block; /* Ajusta el fondo al tamaño del texto */
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #fff;
+    padding: 6px 20px; /* Espaciado interno ajustado */
+    margin-bottom: 20px; /* Separación con los enlaces */
+    background: linear-gradient(45deg, #c59b5b, #5d81cf, #cbd35c); /* Fondo degradado */
+    background-size: 300%; /* Tamaño para la animación */
+    border-radius: 20px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: gradientAnimation 5s ease-in-out infinite; /* Animación constante */
+}
+
+/* Animación del fondo */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.conocenos--a {
+    display: inline-block;
+    font-size: 1.2em;
+    color: #333;
+    padding: 10px 20px;
+    margin: 5px;
+    text-decoration: none;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.conocenos--a:hover {
+    background-color: #ddd;
+}
+
+
+
+/* Estilo para que cada main ocupe el 100% de la altura disponible */
+ main{
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.navegacion__enlace {
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    font-size: 3rem;
+}
+.navegacion__enlace--activo{
+    color: var(--secundarioClaro);
+}
+.navegacion__enlace--activo:hover{
+    color: var(--blanco);
+}
+.publicidad {
+    font-size: 1.5em;         /* Tamaño de letra grande */
+    font-weight: bold;        /* Negrita para resaltar */
+    color: #333;              /* Color inicial del texto */
+    text-align: center;       /* Centrar el texto */
+    padding: 10px;            /* Espaciado alrededor del texto */
+    background: linear-gradient(45deg, #ff6e6e, #7873f5); /* Fondo degradado */
+    border-radius: 8px;       /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+    transition: transform 0.2s ease-in-out; /* Animación al hacer hover */
+}
+
+.publicidad:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño en hover */
+}
+
+.publicidad a {
+    color: #fff; /* Color del enlace */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Efecto de color en hover */
+}
+
+.publicidad a:hover {
+    color: #3bff45; /* Color llamativo en hover */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra en hover */
+}
+
+/** Grid **/
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+.equipo {
+    padding: 4rem 2rem;
+    background-color: rgba(0, 0, 0, 0.555);
+    color: var(--negro);
+    text-align: center;
+}
+
+.equipo__contenedor {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.equipo__miembro {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+}
+
+.equipo__miembro{
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+}
+
+.equipo__info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(214, 208, 208, 0.7);
+    opacity: 0;
+    color: var(--negro);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+
+}
+
+.equipo__miembro:hover .equipo__info {
+    opacity: 1;
+}
+
+.equipo__info h3, .equipo__info p {
+    margin: 0;
+    font-size: 2rem;
+    color: var(--negro);
+}
+
+.equipo__instagram {
+    margin-top: 1rem;
+}
+
+.instagram-logo {
+    width: 25px; /* Tamaño ajustado del logo de Instagram */
+    height: auto; /* Mantiene la proporción del logo */
+    color: var(--blanco);
+}
+
+
+/** Productos **/
+.producto {
+    background-color: rgba(0, 0, 0, 0.555); 
+    padding: 1rem;
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+.producto:hover {
+    transform: scale(1.05); /* Efecto de zoom en la tarjeta */
+    box-shadow: 2px 10px 10px rgba(0, 0, 0, 0.726);
+}
+
+.producto__nombre {
+    font-size: 4rem;
+}
+
+.producto__precio {
+    font-size: 2.8rem;
+    color: var(--secundario);
+}
+
+.producto__nombre,
+.producto__precio {
+    font-family: var(--fuentePrincipal);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/** Estilo para las imágenes de productos **/
+.producto__imagen {
+    width: 100%; /* Ajusta al ancho del contenedor */
+    height: 320px; /* Establece una altura fija */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    transition: transform 0.3s ease; /* Transición suave para el zoom en la imagen */
+}
+/* Estilos para la página de detalles del producto */
+.producto-detalle {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem;
+}
+
+.producto-detalle__imagen img {
+    width: 400px;
+    height: auto;
+    object-fit: cover;
+}
+
+.producto-detalle__info {
+    max-width: 300px;
+    text-align: center;
+}
+
+.producto-detalle__info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.producto-detalle__info p {
+    font-size: 2rem;
+    color: var(--secundario);
+    margin-bottom: 2rem;
+}
+
+.boton {
+    display: block;
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: var(--principal);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+    background-color: var(--secundario);
+}
+
+
+
+
+
+/** Nosotros **/
+.nosotros {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+}
+
+
+.principal {
+    display: flex;
+    flex-direction: column;
+}
+/* Estilo del contenedor principal para centrar los enlaces */
+.Conocenos {
+    text-align: center; /* Centra los elementos hijos (los enlaces) horizontalmente */
+}
+
+
+.conocenos--a {
+    display: inline-block;
+    margin: 1rem;
+    padding: 1rem 2rem; 
+    border: 2px solid var(--negro); 
+    background-color: var(--secundarioClaro); 
+    color: var(--blanco);
+    font-size: 2rem; 
+    font-family: var(--fuentePrincipal); 
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.conocenos--a:hover {
+    background-color: var(--secundarioOscuro);
+    color: var(--blanco); 
+    border-color: var(--blanco);
+    box-shadow: 2px 10px 10px rgba(0, 0, 0, 0.726);
+}
+
+.nosotros {
+    display: flex;
+    align-items: flex-start; /* Alinea los elementos al inicio del contenedor flex */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos hijos */
+    padding: 2rem;
+    gap: 2rem;
+    flex-direction: row; /* Asegura que los elementos estén en una fila horizontal */
+}
+
+.nosotros {
+    display: flex;
+    align-items: flex-start; /* Alinea los elementos al inicio del contenedor flex */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos hijos */
+    padding: 2rem;
+    gap: 2rem;
+    flex-direction: row; /* Asegura que los elementos estén en una fila horizontal */
+}
+
+.nosotros__texto {
+    flex: 1;
+    max-width: 50%; /* Ajusta el ancho máximo del texto */
+    font-family: var(--fuentePrincipal); 
+    background-color: rgba(0, 0, 0, 0.555); 
+    padding: 1rem; /* Espacio interno alrededor del texto */
+    box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.74); /* Sombra del contenedor de texto */
+    margin-right: 1rem; /* Espacio entre el texto y la imagen */
+}
+
+.nosotros__texto h1, .nosotros__texto p {
+    font-family: var(--fuentePrincipal); 
+}
+
+.nosotros__texto h1 {
+    font-size: 4rem; /* Ajusta el tamaño del encabezado */
+}
+
+.nosotros__texto p {
+    font-size: 2.5rem; /* Ajusta el tamaño del párrafo */
+}
+
+.nosotros__imagen {
+    flex: 1;
+    max-width: 30%; /* Ajusta el ancho máximo de la imagen */
+}
+
+.nosotros__imagen img {
+    width: 100%; /* Ajusta el tamaño de la imagen al 100% del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.74); /* Añade sombra a la imagen */
+}
+main#contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 40px;
+}
+
+/* Configuración general de la sección de contacto */
+.contacto-contenido {
+    position: relative; /* Permite la posición absoluta de la información de contacto */
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio reducido para mantenerlos cerca pero no pegados */
+    max-width: 900px;
+    width: 100%;
+}
+
+/* Posiciona el cuadro de información a la izquierda del formulario */
+.contacto-info {
+    position: absolute;
+    left: -190px; /* Ajusta para colocar el cuadro más cerca del formulario */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 320px;
+    background-color: rgba(0, 0, 0, 0.555);
+    box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.74);
+    padding: 30px;
+    border-radius: 10px;
+    color: rgb(190, 124, 61);
+    text-align: left;
+    font-size: 1.4rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
+    animation: textoBrillante 1.5s ease-in-out infinite alternate;
+    margin-right: 30px; /* Pequeño espacio para separación visual */
+}
+
+
+/* Estilo para los íconos */
+.contacto-info i {
+    color: var(--secundarioClaro);
+    margin-right: 10px;
+}
+
+/* Enlace de Instagram */
+.contacto-info a {
+    color: var(--secundarioClaro);
+    text-decoration: none;
+}
+
+.contacto-info a:hover {
+    text-decoration: underline;
+}
+
+/* Mantén los estilos anteriores para el formulario */
+form {
+    max-width: 600px;
+    font-family: var(--fuentePrincipal);
+    background-color: rgba(0, 0, 0, 0.555);
+    box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.74);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Tamaño y estilo de los títulos */
+.contacto-info h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.contacto-info p {
+    margin: 10px 0;
+}
+
+.controls {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    color: white;
+    border-radius: 10px;
+    font-size: 1.6rem;
+    background-color: rgba(0, 0, 0, 0.555);
+    transition: 0.3s ease;
+}
+
+.controls:focus {
+    border: 2px solid var(--blanco);
+    border-radius: 10px;
+    outline: none;
+}
+
+.botons {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.6rem;
+    background-color: var(--secundario);
+    color: var(--blanco);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.botons:hover {
+    background-color: var(--secundarioClaro);
+}
+  @media (max-width: 768px) {
+    .navegacion {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .navegacion__enlace {
+        font-size: 2rem; /* Reduce el tamaño de fuente */
+    }
+}
+
+
+
+/* Contenedor del producto */
+.contenedor-producto {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 100px; 
+    padding: 20px;
+    font-family: var(--fuentePrincipal); 
+    max-width: 900px; 
+    margin: 0 auto; 
+}
+
+/* Información del producto */
+.producto-info {
+    flex: 1;
+    font-family: var(--fuentePrincipal); 
+    background-color: rgba(0, 0, 0, 0.555);
+    max-width: 60%;
+    text-align: center; 
+}
+
+.producto-info img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-width: 400px; 
+    margin-bottom: 20px; 
+}
+
+.producto-info p {
+color: var(--blanco);
+font-family: var(--fuentePrincipal);
+font-size: 3rem;
+
+}
+
+/* Acciones del producto */
+.producto-acciones {
+    display: flex;
+    font-family: var(--fuentePrincipal); 
+    flex-direction: column;
+    align-items: center; 
+    gap: 10px;
+    max-width: 200px;
+}
+
+/* Botones */
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    font-family: var(--fuentePrincipal); 
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    width: 100%; 
+}
+
+.cantidad {
+    color: var(--blanco);
+}
+.añadir-carrito {
+    background-color: var(--secundario);
+}
+
+.añadir-carrito:hover {
+    background-color: var(--secundarioClaro);
+}
+
+.comprar {
+    background-color: var(--secundarioOscuro);
+}
+
+.comprar:hover {
+    background-color: var(--secundario);
+}
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .nosotros {
+        flex-direction: column; /* Cambia a columna para pantallas pequeñas */
+        align-items: center;
+    }
+
+    .nosotros__texto {
+        max-width: 100%; /* Ajusta el texto al ancho completo */
+        margin-right: 0;
+        font-size: 2rem; /* Reduce el tamaño del texto */
+    }
+
+    .nosotros__texto h1 {
+        font-size: 3rem; /* Reduce el tamaño del encabezado */
+    }
+
+    .nosotros__texto p {
+        font-size: 1.8rem; /* Reduce el tamaño del párrafo */
+    }
+
+    .nosotros__imagen {
+        max-width: 100%; /* Ajusta la imagen al ancho completo */
+    }
+}
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr; /* 1 columna para pantallas pequeñas */
+    }
+
+    .producto__nombre {
+        font-size: 3rem; /* Tamaño de texto más pequeño en pantallas pequeñas */
+    }
+
+    .producto__precio {
+        font-size: 2.2rem;
+    }
+   /* Media Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    main#contacto {
+        height: auto;
+        padding: 20px;
+    }
+    
+    .contacto-contenido {
+        flex-direction: column; /* Coloca el contenido en columna en lugar de fila */
+        align-items: center;
+        gap: 0;
+    }
+    
+    .contacto-info {
+        position: static; /* Cambia la posición para que se acomode dentro del flujo */
+        width: 100%; /* Ocupa el ancho completo en pantallas pequeñas */
+        margin-top: 100px;
+        margin-left: 36px;
+        text-align: center;
+    }
+
+    form {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .controls {
+        font-size: 1.2rem;
+    }
+
+    .botons {
+        font-size: 1.4rem;
+    }
+
+    .footer__texto {
+        font-size: 1.8rem;
+    }
+}
+}
+/* Estilo de la alerta emergente */
+.alerta-exito {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    animation: aparecer 0.5s ease-out, desaparecer 0.5s ease-in 4s forwards;
+    z-index: 1000;
+}
+
+/* Animación para la alerta */
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes desaparecer {
+    to { opacity: 0; transform: translateY(-20px); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .alerta-exito {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
