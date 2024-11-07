@@ -3,56 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Microemprendimiento</title>
+    <title>Detalle del Producto</title>
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <main class="principal">
-        <header class="header">
-            <a href="index.php">
-                <img class="header__logo" src="img/logo 1.png" alt="Logotipo">
-            </a>
-        </header>
-        <nav class="navegacion">
-            <a class="navegacion__enlace navegacion__enlace--activo" href="index.php">Tienda</a>
-        </nav>
-    </main>
-    <div class="contenedor-producto">
+    <header class="header">
+        <a href="index.html">
+            <img class="header__logo" src="img/logo 1.png" alt="Logotipo">
+        </a>
+    </header>
+    <nav class="navegacion">
+        <a class="navegacion__enlace navegacion__enlace--activo" href="index.html">MAFU</a>
+    </nav>
+
+    <main class="contenedor-producto">
         <div id="producto-info" class="producto-info"></div>
-        <div class="producto-acciones">
-            <label  class="cantidad"   for="cantidad">Cantidad:</label>
-            <input type="number" id="cantidad" name="cantidad" min="1" value="1">
-            <button id="añadir-carrito" class="btn añadir-carrito">Añadir al carrito</button>
-            <button id="comprar" class="btn comprar">Comprar</button>
+        <div class="producto-fundamentacion">
+            <h2 class="titulo-fundamentacion">Nuestra Inspiración Natural</h2>
+            <p>
+                Elegimos la <span class="keyword">Madera natural</span> para nuestra fuente de agua porque aporta una calidez y belleza orgánicaque invita a la <span class="keyword">relajación</span>. La decoramos con cortezas de árbolespara darle una textura rústica que evoca un entorno <span class="keyword">Natural</span>, como un pedazo de bosque en el hogar. Además, añadimos caracoles para resaltar la conexión con el Agua y la vida en los ecosistemas acuáticos. Cada elemento busca transmitir <span class="keyword">Armonía</span> y <span class="keyword">Respeto por la naturaleza</span>, reflejando nuestro compromiso con el medio ambientey creando una pieza única que invita a la <span class="keyword">tranquilidad</span>.
+            </p>
         </div>
-    </div>
+    </main>
     
+
+    <footer class="footer">
+        <p class="footer__texto">Tienda Microemprendimiento - Todos los derechos Reservados 2024.</p>
+    </footer>
+
     <script>
-        // Función para obtener el parámetro 'id' de la URL
         function obtenerParametroURL(param) {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(param);
         }
-    
-        // Obtener el id del producto desde la URL
+
         const idProducto = obtenerParametroURL('id');
-    
-        // Definir la información de los productos
         const productos = [
-            { id: 1, nombre: '3 Pinos', precio: '$20', imagen: 'imagen/1.jpg' },
-            { id: 2, nombre: 'Cascada del Bosque',  precio: '$21', imagen: 'imagen/3.jpg' },
-            { id: 3, nombre: 'Tronco de Sueños',  precio: '$18', imagen: 'imagen/2.jpg' },
-            { id: 4, nombre: 'Armonía de Raíces',  precio: '$23', imagen: 'imagen/4.jpg' },
+            { id: 1, nombre: 'Oasis', precio: '$150.000', imagen: 'imagen/productofinal2.jpeg' },
+            // Puedes añadir más productos aquí si lo deseas
         ];
-    
-        // Buscar el producto por su id
+
         const producto = productos.find(p => p.id == idProducto);
-    
-        // Mostrar el producto si se encuentra
+
         if (producto) {
             const productoDiv = document.getElementById('producto-info');
             productoDiv.innerHTML = `
@@ -63,23 +57,6 @@
         } else {
             document.getElementById('producto-info').innerText = 'Producto no encontrado';
         }
-
-        // Manejo de eventos para botones
-        document.getElementById('añadir-carrito').addEventListener('click', () => {
-            const cantidad = document.getElementById('cantidad').value;
-            alert(`Producto añadido al carrito: ${cantidad}`);
-            // Aquí iría el código para añadir al carrito
-        });
-
-        document.getElementById('comprar').addEventListener('click', () => {
-            const cantidad = document.getElementById('cantidad').value;
-            alert(`Producto comprado: ${cantidad}`);
-            // Aquí iría el código para procesar la compra
-        });
     </script>
-    
-    <footer class="footer">
-        <p class="footer__texto">Tienda Microemprendimiento - Todos los derechos Reservados 2024.</p>
-    </footer>
 </body>
 </html>
