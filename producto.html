@@ -41,8 +41,10 @@
 
         const idProducto = obtenerParametroURL('id');
         const productos = [
-            { id: 1, nombre: 'Oasis', precio: '$150.000', imagen: 'imagen/productofinal2.jpeg' },
-            // Puedes añadir más productos aquí si lo deseas
+            { id: 1, nombre: 'Oasis', precio: '$180.000', imagen: 'imagen/productofinal2.jpeg' },
+            { id: 2, nombre: 'Pagazus', precio: '$130.000', imagen: 'imagen/prod3.jpg' },
+            { id: 3, nombre: 'Butterfly', precio: '$150.000', imagen: 'imagen/prod4.jpg' },
+            { id: 4, nombre: 'Goold', precio: '$200.000', imagen: 'imagen/Sin título (1).png' },
         ];
 
         const producto = productos.find(p => p.id == idProducto);
